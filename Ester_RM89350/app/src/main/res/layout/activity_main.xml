@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    //inputs
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingTop="5dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        //Distancia
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/distancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/lblKm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distância"
+                android:textSize="20dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/inputKm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="Total de kilômetros"
+                android:paddingLeft="5dp"
+                android:paddingRight="25dp"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblKm" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        //Preço
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/preco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/distancia">
+
+            <TextView
+                android:id="@+id/lblPreco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preço"
+                android:textSize="20dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/inputPreco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="Preço por litro"
+                android:paddingLeft="5dp"
+                android:paddingRight="25dp"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPreco" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        //Autonomia
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/gasto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/preco">
+
+            <TextView
+                android:id="@+id/lblGasto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Autonomia"
+                android:textSize="20dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/inputGasto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="Km por litro"
+                android:paddingLeft="5dp"
+                android:paddingRight="25dp"
+                android:inputType="numberDecimal"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblGasto" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    //resultados
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="25dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputs"
+        app:layout_constraintVertical_bias="0.272">
+
+        <TextView
+            android:id="@+id/txtInit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Seu gasto total será de:"
+            android:textSize="20dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/resultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="18dp"
+            tools:text="RS 0"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInit"
+            />
+
+        <Button
+            android:id="@+id/btnCalcula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Calcular"
+            android:layout_marginTop="10dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultado" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
